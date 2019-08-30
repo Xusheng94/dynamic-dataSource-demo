@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * @date 2018/2/10.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD})
+@Target({ElementType.METHOD,ElementType.TYPE})
 public @interface DataSourceSwitch {
     DBTypeEnum value() default DBTypeEnum.db1;
 }
