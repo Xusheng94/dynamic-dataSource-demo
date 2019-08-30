@@ -3,10 +3,7 @@ package com.warm.common;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -25,13 +22,11 @@ import java.lang.reflect.Method;
 @Slf4j
 public class DataSourSourceAnnnotationAspect {
 
-    @Pointcut("@annotation(com.warm.common.DataSourceSwitch)")
-    public void dataSourcePoint() {
-
-    }
+    @Pointcut("execution(* com.warm.system.service.*..*.*(..))")
+    public void dataSourcePoint() {}
 
     @Before("dataSourcePoint()")
-    public void setDataSource(JoinPoint joinPoint){
+    public void dynamicSource(JoinPoint joinPoint){
         Object target  = joinPoint.getTarget();
         Class<?> clazz = target.getClass();
 

@@ -20,6 +20,7 @@ import java.util.List;
  * @author dgd123
  * @since 2018-02-10
  */
+@DataSourceSwitch(DBTypeEnum.db2)
 @Service
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements OrderService {
     @Autowired
@@ -31,6 +32,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+
     public BigDecimal getOrderPriceByUserId(Integer userId) {
         return orderMapper.getPriceByUserId(userId);
     }
