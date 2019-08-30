@@ -14,6 +14,7 @@ public class MyMetaObjectHandler extends MetaObjectHandler {
     /**
      * 字段为空自动填充,如果要使填充生效,一定在在实体类对应的字段上设置fill = FieldFill.INSERT字段！
      */
+    @Override
     public void insertFill(MetaObject metaObject) {
         // 更多查看源码测试用例
         System.out.println("*************************");

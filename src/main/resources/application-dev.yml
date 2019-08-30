@@ -9,19 +9,19 @@ spring:
     druid:
       # 数据库 1
       db1:
-        url: jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+        url: jdbc:mysql://localhost:3306/test0?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
         username: root
-        password: root
+        password: 123456
         driver-class-name: com.mysql.jdbc.Driver
         initialSize: 5
         minIdle: 5
         maxActive: 20
       # 数据库 2
       db2:
-        url: jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
-        username: root
-        password: root
-        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:postgresql://localhost:5432/test1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+        username: postgres
+        password: 123456
+        driver-class-name: org.postgresql.Driver
         initialSize: 5
         minIdle: 5
         maxActive: 20
