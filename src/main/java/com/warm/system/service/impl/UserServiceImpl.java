@@ -21,6 +21,7 @@ import java.util.List;
  * @author dgd123
  * @since 2018-02-10
  */
+@DataSourceSwitch(DBTypeEnum.db1)
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
     @Autowired
@@ -30,7 +31,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return selectList(null);
     }
 
-    @DataSourceSwitch(DBTypeEnum.db2)
     @Override
     public BigDecimal getOrderPriceByUserId(Integer userId) {
         return orderMapper.getPriceByUserId(userId);

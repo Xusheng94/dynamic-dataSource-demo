@@ -17,10 +17,8 @@ import java.math.BigDecimal;
  * @since 2018-02-10
  */
 
-@DataSourceSwitch(DBTypeEnum.db2)
 public interface OrderMapper extends BaseMapper<Order> {
 
-    @DataSourceSwitch(DBTypeEnum.db2)
     @Select("SELECT price from t_order where user_id =#{userId}")
     BigDecimal getPriceByUserId(Integer userId);
 }
